@@ -1,0 +1,37 @@
+<form [formGroup]="concertFormGroup" class="concert-form">
+    <mat-form-field>
+        <input matInput type="text" placeholder="Name" formControlName="name" required>
+        <mat-hint align="end">The name of the event</mat-hint>
+        <mat-error *ngIf="concertFormGroup.controls.name.hasError('required')">Name is required</mat-error>
+    </mat-form-field>
+
+    <app-date placeholder="Begin date" formControlName="begin_date" hint="The begin date of the event">
+    </app-date>
+
+    <app-date placeholder="End date" formControlName="end_date" hint="The end date of the event">
+    </app-date>
+
+    <mat-form-field>
+        <mat-select placeholder="Artist" formControlName="artist" multiple required>
+            <mat-option [value]="artistOptions.id"
+                        *ngFor="let artistOptions of artistOptions">{{artistOptions.name}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="concertFormGroup.controls.artist.hasError('required')">Artist is required</mat-error>
+    </mat-form-field>
+
+    <mat-radio-group formControlName="over_18">
+        <mat-hint align="end">Only for people over 18?</mat-hint>
+        <mat-radio-button value="true">Yes</mat-radio-button>
+        <mat-radio-button value="false">No</mat-radio-button>
+    </mat-radio-group>
+
+
+    <br/>
+    <mat-card-actions align="center">
+        <button mat-raised-button color="primary" [disabled]="!concertFormGroup.valid" (click)="createConcert()">
+            <span *ngIf="!concertFormGroup.controls.id.value">Create</span>
+            <span *ngIf="concertFormGroup.controls.id.value">Update</span>
+        </button>
+    </mat-card-actions>
+</form>
+

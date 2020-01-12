@@ -1,0 +1,38 @@
+[
+  {
+    "model": "yamod.artist",
+    "pk": 1,
+    "fields": {
+      "name": "Unknown",
+      "dead": false,
+      "year_of_birth": 2019
+    }
+  },
+  {
+    "model": "yamod.artist",
+    "pk": 2,
+    "fields": {
+      "name": "RIN",
+      "dead": false,
+      "year_of_birth": 1990
+    }
+  },
+  {
+    "model": "yamod.artist",
+    "pk": 3,
+    "fields": {
+      "name": "Sido",
+      "dead": false,
+      "year_of_birth": 1970
+    }
+  },
+  {
+    "model": "yamod.artist",
+    "pk": 4,
+    "fields": {
+      "name": "Kool Savas",
+      "dead": false,
+      "year_of_birth": 1970
+    }
+  }
+]
